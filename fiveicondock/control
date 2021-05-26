@@ -1,0 +1,9 @@
+Package: com.jordan.fiveicondock
+Name: FiveIconDock
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Add a 5th icon to your dock
+Maintainer: Jordan
+Author: Jordan
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)

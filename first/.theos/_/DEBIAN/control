@@ -1,0 +1,10 @@
+Package: com.jordan.first
+Name: First
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Jordan
+Author: Jordan
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
+Version: 0.0.1
+Installed-Size: 184

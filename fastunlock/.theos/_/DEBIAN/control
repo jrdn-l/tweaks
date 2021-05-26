@@ -1,0 +1,10 @@
+Package: com.jordan.fastunlock
+Name: FastUnlock
+Architecture: iphoneos-arm
+Description: Automatically unlocks your iphone! No need to swipe up on lockscreen anymore!
+Maintainer: Jordan
+Author: Jordan
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), ws.hbang.common (>= 1.16), preferenceloader
+Version: 0.0.1
+Installed-Size: 360
