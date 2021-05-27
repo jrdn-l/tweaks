@@ -66,23 +66,24 @@ static __inline__ __attribute__((always_inline)) __attribute__((unused)) Class _
 
 static BOOL _logos_method$_ungrouped$CSCoverSheetViewController$isAuthenticated(_LOGOS_SELF_TYPE_NORMAL CSCoverSheetViewController* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd){
 	NSLog(@"-[<CSCoverSheetViewController: %p> isAuthenticated]", self);
+	BOOL r = _logos_orig$_ungrouped$CSCoverSheetViewController$isAuthenticated(self, _cmd);
 	if (enable && ![[NSClassFromString(@"SBCoverSheetPresentationManager") sharedInstance] hasBeenDismissedSinceKeybagLock]){
 		NCNotificationStructuredListViewController *notf = [self.mainPageContentViewController.combinedListViewController valueForKey:@"_structuredListViewController"];
 		if (notifications && [notf hasVisibleContent]){
-			return _logos_orig$_ungrouped$CSCoverSheetViewController$isAuthenticated(self, _cmd);
+			return r;
 		}
 		if (player && self.isShowingMediaControls){
-			return _logos_orig$_ungrouped$CSCoverSheetViewController$isAuthenticated(self, _cmd);
+			return r;
 		}
 		[[_logos_static_class_lookup$SBLockScreenManager() sharedInstance] lockScreenViewControllerRequestsUnlock];
 	}
-	return _logos_orig$_ungrouped$CSCoverSheetViewController$isAuthenticated(self, _cmd);
+	return r;
 }
 
 
 
 
-static __attribute__((constructor)) void _logosLocalCtor_f1ee81aa(int __unused argc, char __unused **argv, char __unused **envp) {
+static __attribute__((constructor)) void _logosLocalCtor_3856978e(int __unused argc, char __unused **argv, char __unused **envp) {
   HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.jordan.fastunlockprefs"];
   [preferences registerBool:&enable default:NO forKey:@"Enable"];
   [preferences registerBool:&notifications default:NO forKey:@"Notifications"];
@@ -90,4 +91,4 @@ static __attribute__((constructor)) void _logosLocalCtor_f1ee81aa(int __unused a
 }
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$CSCoverSheetViewController = objc_getClass("CSCoverSheetViewController"); { MSHookMessageEx(_logos_class$_ungrouped$CSCoverSheetViewController, @selector(isAuthenticated), (IMP)&_logos_method$_ungrouped$CSCoverSheetViewController$isAuthenticated, (IMP*)&_logos_orig$_ungrouped$CSCoverSheetViewController$isAuthenticated);}} }
-#line 65 "Tweak.x"
+#line 66 "Tweak.x"

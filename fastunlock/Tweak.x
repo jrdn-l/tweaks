@@ -40,17 +40,18 @@ BOOL player = YES;
 %hook CSCoverSheetViewController
 -(BOOL)isAuthenticated{
 	%log;
+	BOOL r = %orig;
 	if (enable && ![[NSClassFromString(@"SBCoverSheetPresentationManager") sharedInstance] hasBeenDismissedSinceKeybagLock]){
 		NCNotificationStructuredListViewController *notf = [self.mainPageContentViewController.combinedListViewController valueForKey:@"_structuredListViewController"];
 		if (notifications && [notf hasVisibleContent]){
-			return %orig;
+			return r;
 		}
 		if (player && self.isShowingMediaControls){
-			return %orig;
+			return r;
 		}
 		[[%c(SBLockScreenManager) sharedInstance] lockScreenViewControllerRequestsUnlock];
 	}
-	return %orig;
+	return r;
 }
 %end
 
