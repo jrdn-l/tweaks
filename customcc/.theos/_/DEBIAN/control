@@ -1,0 +1,10 @@
+Package: com.jordan.customcc
+Name: CustomCC
+Architecture: iphoneos-arm
+Description: Modifications to Control Center
+Maintainer: Jordan
+Author: Jordan
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), ws.hbang.common (>= 1.16), preferenceloader
+Version: 0.0.1-48+debug
+Installed-Size: 364
